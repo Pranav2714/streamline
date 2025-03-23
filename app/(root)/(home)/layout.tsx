@@ -1,6 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "StreamLine",
+  description: "Video Conferencing app",
+  icons: {
+    icon: "/icons/duo-logo.svg",
+  },
+};
 export default function HomeLayout({
   children,
 }: Readonly<{
