@@ -23,13 +23,14 @@ import {
 import React, { useState } from "react";
 import Image from "next/image";
 import { Layout, LayoutList, User, Users } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import EndCallButton from "./EndCallButton";
 import Loader from "./Loader";
 
 type CallLayout = "speaker-left" | "grid" | "speaker-right";
 
 const MeetingRoom = () => {
+  const router = useRouter();
   const { useCallCallingState } = useCallStateHooks();
   const callingState = useCallCallingState();
   if (callingState !== CallingState.JOINED) <Loader />;
@@ -68,7 +69,11 @@ const MeetingRoom = () => {
         </div>
       </div>
       <div className="fixed bottom-0 flex w-full items-center justify-center gap-5 flex-wrap">
-        <CallControls />
+        <CallControls
+          onLeave={() => {
+            router.push("/");
+          }}
+        />
         <DropdownMenu>
           <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]">
             <LayoutList className="bg-dark-1 text-white size={20}" />

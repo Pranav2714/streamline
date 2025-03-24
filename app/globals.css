@@ -173,9 +173,10 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
   /* Custom colors from tailwind config */
-  --dark-1: #1c1f2e;
-  --dark-2: #161925;
-  --dark-3: #252a41;
+  --dark-1: #121212; /* Deep, true dark background */
+  --dark-2: #1f1f1f; /* Dark gray with slight contrast */
+  --dark-3: #2a2a2a;
+
   --dark-4: #1e2757;
   --blue-1: #0e78f9;
   --sky-1: #c9ddff;

@@ -1,9 +1,13 @@
-import React from "react";
+import CallList from "@/components/CallList";
 
-export default function Previous() {
+const PreviousPage = () => {
   return (
-    <section className="flex size-full gap-10 flex-col text-white">
-      <h1 className="font-bold text-3xl ">Previous</h1>
+    <section className="flex size-full flex-col gap-10 text-white">
+      <h1 className="text-3xl font-bold">Previous Calls</h1>
+
+      <CallList type="ended" />
     </section>
   );
-}
+};
+
+export default PreviousPage;
