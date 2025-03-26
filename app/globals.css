@@ -187,7 +187,8 @@
   --yellow-1: #f9a90e;
 
   /* Background images */
-  --bg-hero: url("/images/hero-background.png");
+  /* --bg-hero: url("/images/hero-background.png"); */
+  --bg-hero: url("/images/hero-background-2.jpg");
 }
 
 .dark {
