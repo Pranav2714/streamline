@@ -9,11 +9,11 @@ import React, { useState } from "react";
 
 export default function Meeting({ params }: { params: { id: string } }) {
   const { user, isLoaded } = useUser();
-  const [isAudioVideoOn, setIsAudioVideoOn] = useState(false);
+  // const [isAudioVideoOn, setIsAudioVideoOn] = useState(false);
   const [isSetupComplete, setIsSetupComplete] = useState(false);
   const { id } = params;
   const { call, isCallLoading } = useGetCallById(id);
-  if (!isLoaded || isCallLoading) return <Loader />;
+  if (!user || !isLoaded || isCallLoading) return <Loader />;
   return (
     <main className="h-screen w-full">
       <StreamCall call={call}>

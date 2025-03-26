@@ -1,13 +1,5 @@
 import React, { ReactNode } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Divide } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
@@ -65,7 +57,6 @@ const MeetingModal = ({
         </div>
       </DialogContent>
     </Dialog>
-    
   );
 };
 
