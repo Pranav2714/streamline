@@ -29,23 +29,19 @@
 //   );
 // }
 "use client";
-import React, { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
 import Loader from "@/components/Loader";
 import MeetingRoom from "@/components/MeetingRoom";
 import MeetingSetup from "@/components/MeetingSetup";
 import { useGetCallById } from "@/hooks/useGetCallById";
 import { useUser } from "@clerk/nextjs";
 import { StreamCall, StreamTheme } from "@stream-io/video-react-sdk";
+import React, { useState } from "react";
 
-type MeetingPageProps = {
-  params: { id: string };
-};
-
-export default function Meeting({ params }: MeetingPageProps) {
-  const { id } = params;
+export default function Meeting() {
   const { user, isLoaded } = useUser();
   const [isSetupComplete, setIsSetupComplete] = useState(false);
-
+  const { id } = useParams<{ id: string }>();
   const { call, isCallLoading } = useGetCallById(id);
 
   if (!user || !isLoaded || isCallLoading) return <Loader />;
